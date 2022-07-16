@@ -1,0 +1,25 @@
+{
+  "name": "calculadora-de-investimento",
+  "version": "1.0.0",
+  "description": "Projeto JS - Calculadora de Investimentos - Renda Fixa e Variável",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SamuelMBote",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.51.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.0-beta1",
+    "bootstrap-icons": "^1.8.3",
+    "concat": "^1.0.3",
+    "jquery": "^3.6.0"
+  }
+}

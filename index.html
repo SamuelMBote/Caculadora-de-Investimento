@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <section>
+      <div class="container">
+        <form>
+          <div class="row">
+
+            <div class="mb-3 col">
+              <label for="aporte_inicial" class="form-label">Aporte Inicial</label>
+              <input type="text" name="aporte_inicial" id="aporte_inicial" class="form-control">
+            </div>
+            <div class="mb-3 col">
+              <label for="aporte_mensal" class="form-label">Aporte Mensal</label>
+              <input type="text" name="aporte_mensal" id="aporte_mensal" class="form-control">
+            </div>
+            <div class="mb-3 col-12">
+              <button type="submit" class="btn btn-primary" id="Calcular">Calcular</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section>
+      <ul id="resultado">
+
+      </ul>
+    </section>
+  </main>
+</body>
+<script src="dist/js/main.js"></script>
+
+</html>
