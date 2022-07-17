@@ -1,11 +1,17 @@
 function Investimento() {
   const fazerCalculo = document.querySelector('#Calcular');
   const aporteInicial = document.querySelector('#aporte_inicial');
+  const aporteMensal = document.querySelector('#aporte_mensal');
   const resultado = document.querySelector('#resultado');
 
-  function investir(QueroAportar = 1000, anos = 5, taxaRendimento = 0.01) {
+  function investir(
+    ValorInicial = 0,
+    QueroAportar = 1000,
+    anos = 5,
+    taxaRendimento = 0.01,
+  ) {
     let aporte = QueroAportar;
-    let patrimonio = 0;
+    let patrimonio = ValorInicial;
 
     tempo = anos * 12;
     let valorFinal = [];
@@ -13,14 +19,25 @@ function Investimento() {
       patrimonio = patrimonio + aporte + patrimonio * taxaRendimento;
       valorFinal.push(patrimonio);
     }
-    valorFinal.forEach((item) => {
-      document.write(`<li>${item}</li>`);
+
+    valorFinal.forEach((item, index) => {
+      resultado.innerHTML += ` <tr>
+        <th scope="row">${index + 1} º mês</th>
+        <td>R$ ${item.toFixed(2)}</td>
+              </tr>`;
     });
   }
 
   fazerCalculo.addEventListener('click', function () {
-    if (Number.isNaN(Number.parseFloat(aporteInicial.value)) == false) {
-      investir(Number.parseFloat(aporteInicial.value));
+    resultado.innerHTML = '';
+    if (
+      Number.isNaN(Number.parseFloat(aporteInicial.value)) == false &&
+      Number.isNaN(Number.parseFloat(aporteMensal.value)) == false
+    ) {
+      investir(
+        Number.parseFloat(aporteInicial.value),
+        Number.parseFloat(aporteMensal.value),
+      );
     } else {
       window.alert('Digite um valor numérico');
     }

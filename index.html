@@ -13,28 +13,47 @@
   <main>
     <section>
       <div class="container">
-        <form>
-          <div class="row">
+        <div class="row">
 
-            <div class="mb-3 col">
-              <label for="aporte_inicial" class="form-label">Aporte Inicial</label>
-              <input type="text" name="aporte_inicial" id="aporte_inicial" class="form-control">
-            </div>
-            <div class="mb-3 col">
-              <label for="aporte_mensal" class="form-label">Aporte Mensal</label>
-              <input type="text" name="aporte_mensal" id="aporte_mensal" class="form-control">
-            </div>
-            <div class="mb-3 col-12">
-              <button type="submit" class="btn btn-primary" id="Calcular">Calcular</button>
-            </div>
+          <div class="mb-3 col">
+            <label for="aporte_inicial" class="form-label">Aporte Inicial</label>
+            <input type="text" name="aporte_inicial" id="aporte_inicial" class="form-control">
           </div>
-        </form>
+          <div class="mb-3 col">
+            <label for="aporte_mensal" class="form-label">Aporte Mensal</label>
+            <input type="text" name="aporte_mensal" id="aporte_mensal" class="form-control">
+          </div>
+          <div class="mb-3 col-12">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="mb-3 col-12">
+            <button type="submit" class="btn btn-primary" id="Calcular">Calcular</button>
+          </div>
+
+        </div>
+
       </div>
     </section>
     <section>
-      <ul id="resultado">
+      <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Patrimônio</th>
+            </tr>
+          </thead>
+          <tbody id="resultado">
 
-      </ul>
+          </tbody>
+        </table>
+      </div>
+
     </section>
   </main>
 </body>
