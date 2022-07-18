@@ -3,7 +3,18 @@ function Investimento() {
   const aporteInicial = document.querySelector('#aporte_inicial');
   const aporteMensal = document.querySelector('#aporte_mensal');
   const resultado = document.querySelector('#resultado');
+  const anos = document.querySelector('#anosInvestir');
 
+  function adicionarAnos() {
+    let qtdAnos = [];
+    for (let ano = 1; ano <= 10; ano++) {
+      qtdAnos.push(ano);
+    }
+    qtdAnos.forEach((item, index) => {
+      anos.innerHTML += `<option value="${item}">${item}</option>`;
+    });
+  }
+  adicionarAnos();
   function investir(
     ValorInicial = 0,
     QueroAportar = 1000,
@@ -37,6 +48,7 @@ function Investimento() {
       investir(
         Number.parseFloat(aporteInicial.value),
         Number.parseFloat(aporteMensal.value),
+        Number.parseInt(anos.value),
       );
     } else {
       window.alert('Digite um valor numérico');
