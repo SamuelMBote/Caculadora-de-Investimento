@@ -12414,6 +12414,36 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+[data-theme=light] {
+  --nav-background-color: #F57C00;
+  --background-color: #FF9800;
+  --color: #212121;
+  --btn-background-color: #FFEB3B;
+  --btn-color: #212121;
+  --table-head-color: #212121;
+  --table-results-color: #212121;
+}
+
+[data-theme=dark] {
+  --nav-background-color: #303F9F;
+  --background-color: #3F51B5;
+  --color: #FFFFFF;
+  --btn-background-color: #03A9F4;
+  --btn-color: #FFFFFF;
+  --table-head-color: #FFFFFF;
+  --table-results-color: #FFFFFF;
+}
+
 body {
-  background-color: #E64A19;
+  background-color: var(--background-color);
+  color: var(--color);
+}
+
+.btn {
+  background-color: var(--btn-background-color);
+  color: var(--btn-color);
+}
+
+th {
+  color: var(--table-head-color);
 }

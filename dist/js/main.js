@@ -56,3 +56,13 @@ function Investimento() {
   });
 }
 Investimento();
+function switchTheme() {
+  const tema = document.querySelector('#temaSwitch');
+  const body = document.querySelector('html').dataset;
+  tema.checked = false;
+  body.theme = 'light';
+  tema.addEventListener('click', function () {
+    tema.checked ? (body.theme = 'dark') : (body.theme = 'light');
+  });
+}
+switchTheme();
