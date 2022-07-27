@@ -32,15 +32,22 @@ function Investimento() {
     }
 
     valorFinal.forEach((item, index) => {
-      resultado.innerHTML += ` <tr>
-        <th scope="row">${index + 1} º mês</th>
-        <td>R$ ${item.toFixed(2)}</td>
-              </tr>`;
+      let tr = document.createElement('tr');
+      let th = document.createElement('th');
+      let td = document.createElement('td');
+      th.setAttribute('scope', 'row');
+      th.innerText = index + 1;
+      td.innerText = `R$ ${item.toFixed(2)}`;
+
+      tr.innerHTML = th.outerHTML + td.outerHTML;
+      resultado.innerHTML += tr.outerHTML;
     });
   }
 
   fazerCalculo.addEventListener('click', function () {
-    resultado.innerHTML = '';
+    if (resultado.innerHTML != '') {
+      resultado.innerHTML = '';
+    }
     if (
       Number.isNaN(Number.parseFloat(aporteInicial.value)) == false &&
       Number.isNaN(Number.parseFloat(aporteMensal.value)) == false
@@ -58,11 +65,23 @@ function Investimento() {
 Investimento();
 function switchTheme() {
   const tema = document.querySelector('#temaSwitch');
+  const nomeTema = document.querySelector('#nomeTema');
   const body = document.querySelector('html').dataset;
+
   tema.checked = false;
   body.theme = 'light';
   tema.addEventListener('click', function () {
-    tema.checked ? (body.theme = 'dark') : (body.theme = 'light');
+    let iElement = document.createElement('i');
+    iElement.classList.add('bi');
+    if (tema.checked) {
+      body.theme = 'dark';
+      iElement.classList.add('bi-moon-stars-fill');
+      nomeTema.innerHTML = iElement.outerHTML;
+    } else {
+      body.theme = 'light';
+      iElement.classList.add('bi-brightness-high');
+      nomeTema.innerHTML = iElement.outerHTML;
+    }
   });
 }
 switchTheme();
